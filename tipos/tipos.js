@@ -119,3 +119,4 @@ let teste = null;
 let type = null;
 type = 10;
 type = 'Premium';
+//# sourceMappingURL=tipos.js.map
