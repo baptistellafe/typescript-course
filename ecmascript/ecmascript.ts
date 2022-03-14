@@ -148,10 +148,12 @@ function esperar3Promise() {
 esperar3Promise()
   .then(dado => console.log('a função foi executada'))
 
-  fetch('https://swpi.dev/api/people/1')
+  fetch('https://swapi.dev/api/people/1')
     .then(resp => resp.json())
     .then(personagem => personagem.films)
     .then(films => fetch(films[0]))
     .then(respFilm => respFilm.json())
     .then(film => console.log(film.title))
     .catch(err => console.log('catch!!! ' + err))
+
+  
