@@ -125,17 +125,6 @@ const felipe = {
 const { olhos, peso } = felipe
 console.log(olhos, peso)
 
-function esperar3s(callback: (dado: string) => void) {
-  setTimeout(() => {
-    callback('3 segundos depois')
-  }, 3000);
-}
-
-esperar3s(function(resultado: string) {
-  console.log(resultado)
-})
-
-esperar3s()
 
 function esperar3Promise() {
   return new Promise((resolve: any) => {

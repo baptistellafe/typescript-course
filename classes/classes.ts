@@ -96,3 +96,75 @@ class Ferrari extends Carro {
 
 const f40 = new Ferrari('f40', 300)
 console.log(f40);
+
+
+class Pessoa {
+  private _idade: number = 0;
+
+  get idade(): number {
+    return this._idade
+  }
+
+  set idade(valor: number) {
+    if(valor >= 0 && valor <= 120) {
+      this._idade = valor
+    }
+  }
+}
+
+let pessoa5 = new Pessoa;
+pessoa5.idade = 10
+console.log(pessoa5)
+
+// atributos e métdos estáticos
+
+class Matematica {
+  static PI: number = 3.14
+
+  static areaCirc(raio: number):number {
+    return this.PI * raio * raio
+  }
+}
+
+console.log(Matematica.areaCirc(4))
+
+abstract class X {
+  abstract y(a: number): number 
+
+  w(b: number): void {
+    console.log(b)
+  }
+}
+
+// classe abstrata
+abstract class Calculo {
+  protected resultado: number = 0;
+
+  abstract executar(...numeros: number[]): void
+
+  getResultado():number {
+    return this.resultado
+  }
+}
+
+class Soma extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t + a)
+  }
+}
+
+let c1 = new Soma;
+c1.executar(2, 2, 2, 2, 2);
+console.log(c1.getResultado());
+
+// somente leitura
+class Aviao {
+  public readonly modelo : string
+
+  constructor(modelo: string, public readonly prefixo: string) {
+    this.modelo = modelo
+  }
+}
+
+let aviao = new Aviao('Modelo do aviao', 'BR')
+console.log(aviao);

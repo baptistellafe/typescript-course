@@ -74,4 +74,59 @@ class Ferrari extends Carro {
 }
 const f40 = new Ferrari('f40', 300);
 console.log(f40);
+class Pessoa {
+    constructor() {
+        this._idade = 0;
+    }
+    get idade() {
+        return this._idade;
+    }
+    set idade(valor) {
+        if (valor >= 0 && valor <= 120) {
+            this._idade = valor;
+        }
+    }
+}
+let pessoa5 = new Pessoa;
+pessoa5.idade = 10;
+console.log(pessoa5);
+// atributos e métdos estáticos
+class Matematica {
+    static areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Matematica.PI = 3.14;
+console.log(Matematica.areaCirc(4));
+class X {
+    w(b) {
+        console.log(b);
+    }
+}
+// classe abstrata
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
+class Soma extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, a) => t + a);
+    }
+}
+let c1 = new Soma;
+c1.executar(2, 2, 2, 2, 2);
+console.log(c1.getResultado());
+// somente leitura
+class Aviao {
+    constructor(modelo, prefixo) {
+        this.prefixo = prefixo;
+        this.modelo = modelo;
+    }
+}
+let aviao = new Aviao('Modelo do aviao', 'BR');
+console.log(aviao);
 //# sourceMappingURL=classes.js.map
